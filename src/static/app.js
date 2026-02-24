@@ -647,10 +647,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const linkedinBtn = activityCard.querySelector(".share-button.linkedin");
     const emailBtn = activityCard.querySelector(".share-button.email");
 
-    facebookBtn.addEventListener("click", () => shareOnFacebook(name, details.description, formattedSchedule));
-    twitterBtn.addEventListener("click", () => shareOnTwitter(name, details.description, formattedSchedule));
-    linkedinBtn.addEventListener("click", () => shareOnLinkedIn(name, details.description, formattedSchedule));
-    emailBtn.addEventListener("click", () => shareViaEmail(name, details.description, formattedSchedule));
+    if (facebookBtn) {
+      facebookBtn.addEventListener("click", () => shareOnFacebook(name, details.description, formattedSchedule));
+    }
+    if (twitterBtn) {
+      twitterBtn.addEventListener("click", () => shareOnTwitter(name, details.description, formattedSchedule));
+    }
+    if (linkedinBtn) {
+      linkedinBtn.addEventListener("click", () => shareOnLinkedIn(name, details.description, formattedSchedule));
+    }
+    if (emailBtn) {
+      emailBtn.addEventListener("click", () => shareViaEmail(name, details.description, formattedSchedule));
+    }
 
     activitiesList.appendChild(activityCard);
   }
