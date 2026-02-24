@@ -664,3 +664,80 @@ footer {
 #logout-button:hover {
   background-color: rgba(255, 255, 255, 0.3);
 }
+
+/* Social sharing buttons */
+.social-share-buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0;
+  padding: 8px 0;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.share-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+.share-button {
+  background-color: transparent;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.share-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.share-button.facebook {
+  color: #1877f2;
+  border-color: #1877f2;
+}
+
+.share-button.facebook:hover {
+  background-color: #1877f2;
+  color: white;
+}
+
+.share-button.twitter {
+  color: #1da1f2;
+  border-color: #1da1f2;
+}
+
+.share-button.twitter:hover {
+  background-color: #1da1f2;
+  color: white;
+}
+
+.share-button.linkedin {
+  color: #0077b5;
+  border-color: #0077b5;
+}
+
+.share-button.linkedin:hover {
+  background-color: #0077b5;
+  color: white;
+}
+
+.share-button.email {
+  color: #666666;
+  border-color: #666666;
+}
+
+.share-button.email:hover {
+  background-color: #666666;
+  color: white;
+}
