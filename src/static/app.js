@@ -31,6 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Dark mode functionality
   function initDarkMode() {
+    if (!darkModeToggle || !themeIcon) {
+      return;
+    }
+    
     // Check localStorage for saved theme preference
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "dark") {
