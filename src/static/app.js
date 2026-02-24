@@ -36,6 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (savedTheme === "dark") {
       document.body.classList.add("dark-mode");
       themeIcon.textContent = "☀️";
+      darkModeToggle.setAttribute("aria-label", "Switch to light mode");
+    } else {
+      darkModeToggle.setAttribute("aria-label", "Switch to dark mode");
     }
   }
 
@@ -46,12 +49,20 @@ document.addEventListener("DOMContentLoaded", () => {
     // Update icon
     themeIcon.textContent = isDarkMode ? "☀️" : "🌙";
     
+    // Update aria-label for accessibility
+    darkModeToggle.setAttribute(
+      "aria-label",
+      isDarkMode ? "Switch to light mode" : "Switch to dark mode"
+    );
+    
     // Save preference to localStorage
     localStorage.setItem("theme", isDarkMode ? "dark" : "light");
   }
 
   // Event listener for dark mode toggle
-  darkModeToggle.addEventListener("click", toggleDarkMode);
+  if (darkModeToggle) {
+    darkModeToggle.addEventListener("click", toggleDarkMode);
+  }
 
   // Activity categories with corresponding colors
   const activityTypes = {
